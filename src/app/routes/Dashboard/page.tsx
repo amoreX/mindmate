@@ -1,7 +1,8 @@
 "use client"
 
 import { useSession, signOut } from "next-auth/react";
-
+import { useState,useEffect } from "react";
+import axios from "axios";
 import { Button } from "@/components/ui/button";
 import { SmilePlus, LogOut } from "lucide-react";
 import MoodSelector from "@/components/dashboard/MoodSelector";
@@ -13,10 +14,21 @@ import MoodInsights from "@/components/dashboard/MoodInsights";
 export default function Dashboard() {
 	const { data: session } = useSession();
 	console.log(session?.user);
+
+	useEffect(()=>{
+		const register=async()=>{
+			await axios.get("/api/backend/connectDB");
+			const res=await axios.post("/api/backend/authUser",{email:session?.user?.email});
+			console.log(res);
+		}
+		if (session?.user?.email){
+			register();
+		}
+	},[session?.user?.email])
 	return (
 		<div className="min-h-screen bg-background">
-			<header className="sticky top-0 z-10 border-b bg-background">
-				<div className=" flex h-16 items-center justify-between px-4">
+			<header className="sticky top-0 z-10 border-b bg-white">
+				<div className=" flex h-16 bg-white items-center justify-between px-4">
 					<div className="flex items-center gap-2">
 						<SmilePlus className="h-6 w-6 text-primary" />
 						<span className="text-lg font-semibold">MindMate</span>
@@ -27,7 +39,7 @@ export default function Dashboard() {
 					</Button>
 				</div>
 			</header>
-			<main className=" py-6 px-4">
+			<main className=" py-6 px-4 h-96">
 				<div className="grid gap-4 md:grid-cols-2">
 					<div className="space-y-6">
 						<MoodSelector />
