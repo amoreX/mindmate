@@ -12,7 +12,7 @@ import MoodInsights from "@/components/dashboard/MoodInsights";
 
 export default function Dashboard() {
 	const { data: session } = useSession();
-	console.log(session);
+	console.log(session?.user);
 	return (
 		<div className="min-h-screen bg-background">
 			<header className="sticky top-0 z-10 border-b bg-background">
