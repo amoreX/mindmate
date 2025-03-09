@@ -8,7 +8,7 @@ export default function MoodInsights() {
         <CardDescription>Understanding your patterns</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="space-y-4">
+        <div className="space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-sm font-medium">Average mood this week:</span>
             <span className="font-semibold text-primary">3.7/5</span>
