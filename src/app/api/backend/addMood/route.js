@@ -1,10 +1,11 @@
-import mongoose from "mongoose";
-import { connecting } from "../connectDB/route";
+import mongoose, { connect } from "mongoose";
+import { connectDB } from "../../../../lib/utils/connectdb";
+
 import { userModel } from "../model/user.model";
 
 export const POST = async (req, res) => {
 	const { email, happy, journal } = await req.json(); // Correctly parse the request body
-	await connecting();
+	await connectDB();
 	try {
 		const checkingUser = await userModel.findOne({ email: email });
 
