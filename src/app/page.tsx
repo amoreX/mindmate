@@ -1,8 +1,8 @@
 
 
 
-import Login from "@/components/Login"
 
+import Login from "./routes/Login/page"
 
 export default function Home() {
 
