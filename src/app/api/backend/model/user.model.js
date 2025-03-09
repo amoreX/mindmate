@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
 	},
 	mood: [
 		{
-			mood: Number,
+			mood: String,
 			journal: String,
 		},
 	],
