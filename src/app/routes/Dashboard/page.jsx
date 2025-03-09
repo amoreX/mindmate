@@ -41,6 +41,7 @@ export default function Dashboard() {
 			// console.log(res);
 			setMood(null);
 			toast("Mood updated successfully");
+			window.location.reload(); // Refresh the page
 		}
 	};
 
