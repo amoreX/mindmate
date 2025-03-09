@@ -23,7 +23,6 @@ export default function Dashboard() {
 
 	useEffect(() => {
 		const register = async () => {
-			await axios.get("/api/backend/connectDB");
 			const res = await axios.post("/api/backend/authUser", { email: session?.user?.email });
 			console.log(res);
 		};
