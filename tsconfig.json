@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/providers.js", "src/components/dashboard/JournalEntry.jsx", "src/components/dashboard/MoodSelector.jsx", "src/app/routes/Dashboard/page.jsx", "src/components/dashboard/page.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/providers.js", "src/components/dashboard/MoodInsights.jsx", "src/components/dashboard/Progress.jsx", "src/components/dashboard/JournalEntry.jsx", "src/components/dashboard/MoodSelector.jsx", "src/app/routes/Dashboard/page.jsx", "src/components/dashboard/page.js"],
   "exclude": ["node_modules"]
 }

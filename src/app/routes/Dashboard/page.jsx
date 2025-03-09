@@ -9,7 +9,7 @@ import MoodSelector from "@/components/dashboard/MoodSelector";
 import JournalEntry from "@/components/dashboard/JournalEntry";
 import DailyTip from "@/components/dashboard/DailyTip";
 import Progress from "@/components/dashboard/Progress";
-import MoodInsights from "@/components/dashboard/MoodInsights";
+import MoodInsights from "@/components/dashboard/MoodInsights.jsx";
 
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
@@ -19,12 +19,12 @@ export default function Dashboard() {
 	const { data: session } = useSession();
 	const [mood, setMood] = useState(null);
 	const [journal, setJournal] = useState("");
-	console.log(session?.user);
+	// console.log(session?.user);
 
 	useEffect(() => {
 		const register = async () => {
 			const res = await axios.post("/api/backend/authUser", { email: session?.user?.email });
-			console.log(res);
+			// console.log(res);
 		};
 		if (session?.user?.email) {
 			register();
@@ -38,7 +38,7 @@ export default function Dashboard() {
 				happy: mood,
 				journal: journal,
 			});
-			console.log(res);
+			// console.log(res);
 			setMood(null);
 			toast("Mood updated successfully");
 		}
