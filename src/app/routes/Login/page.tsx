@@ -41,13 +41,7 @@ export default function Login() {
             {isLoading ? (
               <div className="h-4 w-4 animate-spin rounded-full border-2 border-primary border-t-transparent" />
             ) : (
-              <Image
-                src="/placeholder.svg?height=16&width=16"
-                alt="Google Logo"
-                width={16}
-                height={16}
-                className="h-4 w-4"
-              />
+              <></>
             )}
             {isLoading ? "Signing in..." : "Sign in with Google"}
           </Button>
